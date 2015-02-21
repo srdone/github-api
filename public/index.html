@@ -23,6 +23,17 @@
       Location: {{userData.summary.location}}
     </div>
 
+    <hr>
+
+    <div class="events">
+      <div ng-repeat="event in userData.events | orderBy: 'created_at': 'true'">
+        {{event.actor.login}}
+        {{event.type | githubEventType}}
+        <a ng-href="{{event.repo.url}}">{{event.repo.name}}</a>
+        {{event.created_at | date: 'shortDate'}}
+      </div>
+    </div>
+
   </div>
 
   <!--jQuery-->
@@ -40,6 +51,9 @@
   <!--Services-->
   <script src="js/services/dataService.js"></script>
   <script src="js/services/secretService.js"></script>
+
+  <!--Filters-->
+  <script src="js/filters/githubEventTypeFilter.js"></script>
 
 </body>
 </html>
