@@ -9,12 +9,19 @@
   <header class="header">
     <label for="username">Username</label>
     <input type="text" id="username" placeholder="username" ng-model="search.username">
+    <button type="submit" ng-click="getData()">Get Data</button>
   </header>
 
   <div class="main-contents">
 
-    {{test}}
-    {{clientId}}
+    <div class="summary">
+      <img ng-src="{{userData.summary.avatar_url}}">
+      {{userData.summary.name}}
+      Followers: {{userData.summary.followers}}
+      Following: {{userData.summary.following}}
+      Public Repos: {{userData.summary.public_repos}}
+      Location: {{userData.summary.location}}
+    </div>
 
   </div>
 
