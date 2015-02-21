@@ -3,34 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <title>GitHub API</title>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body ng-app="githubAPI" ng-controller="MainController">
 
   <header class="header">
-    <label for="username">Username</label>
+    <label for="username" class="search-text">Search for GitHub User</label>
     <input type="text" id="username" placeholder="username" ng-model="search.username">
-    <button type="submit" ng-click="getData()">Get Data</button>
+    <button type="submit" ng-click="getData()">Search</button>
   </header>
 
-  <div class="main-contents">
+  <div class="main-contents group" ng-if="userData">
 
     <div class="summary">
-      <img ng-src="{{userData.summary.avatar_url}}">
-      {{userData.summary.name}}
-      Followers: {{userData.summary.followers}}
-      Following: {{userData.summary.following}}
-      Public Repos: {{userData.summary.public_repos}}
-      Location: {{userData.summary.location}}
+      
+      <div class="avatar">
+        <img ng-src="{{userData.summary.avatar_url}}">
+      </div>
+      
+      <div class="summary-content">
+      
+        <div class="username">
+          {{userData.summary.name}}
+        </div>
+
+        <div class="followers">
+          Followers: <span class="badge">{{userData.summary.followers}}</span>
+        </div>
+
+        <div class="following">
+          Following: <span class="badge">{{userData.summary.following}}</span>
+        </div>
+
+        <div class="publicrepos">
+          Public Repos: <span class="badge">{{userData.summary.public_repos}}</span>
+        </div>
+
+        <div class="location">
+          Location: {{userData.summary.location}}
+        </div>
+        
+      </div>
+        
     </div>
 
-    <hr>
-
-    <div class="events">
-      <div ng-repeat="event in userData.events | orderBy: 'created_at': 'true'">
-        {{event.actor.login}}
-        {{event.type | githubEventType}}
-        <a ng-href="{{event.repo.url}}">{{event.repo.name}}</a>
-        {{event.created_at | date: 'shortDate'}}
+    <div class="events group">
+      <div class="event" ng-repeat="event in userData.events | orderBy: 'created_at': 'true'">
+        <span class="login">{{event.actor.login}}</span>
+        <a ng-href="{{event.repo.url}}">
+          <span class="event-type">{{event.type | githubEventType}}</span>
+          <span class="repo-name hidden-sm">{{event.repo.name}}</span>
+        </a>
+        <span class="date">{{event.created_at | date: 'shortDate'}}</span>
       </div>
     </div>
 

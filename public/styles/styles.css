@@ -1,0 +1,125 @@
+/* color pallette: http://www.colourlovers.com/palette/3659600/Peaceful */
+/* created by paintglass: http://www.colourlovers.com/lover/paintglass/loveNote */
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Oxygen', sans-serif;
+  background-color: #A76C30;
+}
+
+a {
+  text-decoration: none;
+  color:#A76C30;
+}
+
+a:hover {
+  color: #3F4B00;
+}
+
+button {
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #F8C061;
+}
+
+.search-text {
+  font-weight: 800;
+}
+
+.main-contents {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4em;
+  background-color: #F8C061;
+}
+
+.summary {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  padding: 1em;
+  line-height: 1.7em;
+  overflow-wrap: break-word;
+}
+
+.events {
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
+  font-size: .9em;
+  text-align: center;
+  line-height: 1.8em;
+}
+
+.avatar {
+  width: 30%;
+  height: auto;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.summary-content {
+  width: 50%;
+  height: auto;
+  display: inline-block;
+  margin: 0 auto;
+  padding: .5em;
+}
+
+.username {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: .2em;
+}
+
+.login {
+  font-weight: 600;
+}
+
+.event-type {
+  font-style: italic;
+}
+
+.badge {
+  font-weight: 600;
+  font-size: .8em;
+  color: white;
+  background-color: black;
+  padding: .3em;
+  border-radius: 2em/2.9em;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+/* clearfix: http://css-tricks.com/snippets/css/clear-fix/ */
+.group:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+@media (min-width: 500px) {
+  .hidden-sm {
+    display:inline;
+  }
+}
