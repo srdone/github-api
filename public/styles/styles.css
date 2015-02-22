@@ -67,6 +67,7 @@ img {
 
 .avatar {
   width: 30%;
+  min-width: 150px;
   height: auto;
   display: inline-block;
   margin: 0 auto;
@@ -83,7 +84,6 @@ img {
 .username {
   font-size: 1.2em;
   font-weight: 600;
-  padding: .2em;
 }
 
 .login {
