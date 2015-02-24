@@ -3,7 +3,7 @@ angular.module('githubAPI').filter('githubEventType', function () {
   var eventNames = {
     PushEvent: 'pushed',
     CreateEvent: 'created',
-    WatcthEvent: 'starred'
+    WatchEvent: 'starred'
   };
 
   return function (event) {
